@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI Humanizer: Free and open-source tool for paraphrasing and humanizing text. 100% free, no login required, with responsive design and SEO optimization." />
+    <meta name="keywords" content="AI Humanizer, Humanizer AI Free, Free Paraphrasing Tool, Open Source AI Tools" />
+    <title>Free AI Humanizer & Text Paraphraser Tool | Anti AI Detection</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Free AI Humanizer & Text Paraphraser Tool | Anti AI Detection" />
+    <meta name="description"
+        content="Free online AI text humanizer and paraphraser. Bypass AI detection, create human-like content, and avoid plagiarism. No login required, 100% free tool for students and writers." />
+    <meta name="keywords"
+        content="AI Humanizer, AI Text, Paraphraser, Anti Plagiarism, Anti AI, Bypass AI Detection, AI Text Converter, Human Writing Generator, Free AI Tool, AI Detection Bypass, Text Humanizer" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Free AI Humanizer & Text Paraphraser Tool" />
+    <meta property="og:description"
+        content="Free online AI text humanizer and paraphraser. Bypass AI detection, create human-like content, and avoid plagiarism. No login required, 100% free tool." />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Free AI Humanizer & Text Paraphraser Tool" />
+    <meta property="twitter:description"
+        content="Free online AI text humanizer and paraphraser. Bypass AI detection, create human-like content, and avoid plagiarism. No login required, 100% free tool." />
+
+    <!-- Additional Tags -->
+    <meta name="google-adsense-account" content="ca-pub-6143942455004391">
+    <meta name="google-site-verification" content="your-verification-code" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+
+<body>
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>AI Humanizer</h2>
+            <span class="sidebar-subtitle">Navigation</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#input" class="nav-link active">
+                <i class="fas fa-keyboard"></i>
+                <span>Input Text</span>
+            </a>
+
+            <a href="#output" class="nav-link">
+                <i class="fas fa-file-alt"></i>
+                <span>Humanized Output</span>
+            </a>
+
+            <a href="#how-it-works" class="nav-link">
+                <i class="fas fa-lightbulb"></i>
+                <span>How It Works</span>
+            </a>
+
+            <a href="#about" class="nav-link">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>100% Free Tool</p>
+        </div>
+    </aside>
+
+    <div class="container">
+        <header class="site-header">
+            <div class="header-container">
+
+                <!-- Logo + Tagline -->
+                <div class="header-brand">
+                    <h1 class="logo">AI Text Humanizer</h1>
+                    <p class="tagline">Transform AI-generated content into natural, human-like writing</p>
+                </div>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="header-nav">
+                    <a href="#input" class="nav-link">Input Text</a>
+                    <a href="#output" class="nav-link">Humanized Output</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+
+                <!-- Call-to-Action -->
+                <div class="header-cta">
+                    <a href="#humanize-btn" class="btn btn-primary">
+                        <i class="fas fa-magic"></i> Humanize Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#input" class="mobile-link">Input Text</a>
+                <a href="#output" class="mobile-link">Humanized Output</a>
+                <a href="#how-it-works" class="mobile-link">How It Works</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#humanize-btn" class="mobile-link btn btn-primary">Humanize Now</a>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="card" id="input">
+
+                <h2 class="card-title"><i class="fas fa-keyboard"></i> Input Text</h2>
+
+                <div class="input-wrapper">
+                    <textarea id="ai-input" placeholder="Paste your AI-generated text here..."
+                        maxlength="750"></textarea>
+
+                    <button id="clear-input" class="clear-btn" title="Clear text">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+
+                <div id="char-count" class="char-count">0/750 characters</div>
+
+                <button id="humanize-btn" class="btn">
+                    <span>Humanize Text</span>
+                    <div id="spinner" class="spinner"></div>
+                </button>
+            </div>
+            <div class="card" id="output">
+
+                <h2 class="card-title"><i class="fas fa-file-alt"></i> Humanized Output</h2>
+                <div class="output-container">
+                    <textarea id="human-output" placeholder="Your humanized text will appear here..."
+                        readonly></textarea>
+                    <div class="output-actions">
+                        <button id="copy-btn" class="btn btn-secondary" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="how-it-works">
+
+                <h2 class="card-title"><i class="fas fa-lightbulb"></i> How It Works</h2>
+                <p>Our AI Text Humanizer transforms robotic, AI-generated content into natural, engaging text that reads
+                    like it was written by a human. The process involves:</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-comment-alt"></i></div>
+                        <h3 class="feature-title">Conversational Tone</h3>
+                        <p>Uses natural language and avoids complex jargon</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-grip-lines"></i></div>
+                        <h3 class="feature-title">Concise Sentences</h3>
+                        <p>Short, punchy sentences for better readability</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-book"></i></div>
+                        <h3 class="feature-title">Simple Language</h3>
+                        <p>Universal readability level for accessibility</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-list"></i></div>
+                        <h3 class="feature-title">Smart Formatting</h3>
+                        <p>Bullet points and emphasis for clarity</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="about">
+
+                <h2 class="card-title"><i class="fas fa-info-circle"></i> About This Service</h2>
+                <p>AI Text Humanizer is a free service developed to help content creators, marketers, and writers
+                    transform AI-generated content into natural, human-sounding text.</p>
+                <p>Our advanced algorithm follows strict guidelines to ensure the output is engaging, authentic, and
+                    free from robotic patterns typical of AI-generated content. We avoid promotional jargon, complex
+                    structures, and maintain a natural flow throughout the text.</p>
+                <p>This service remains completely free to use thanks to our supporters and contributors who believe in
+                    accessible AI tools for everyone.</p>
+            </div>
+        </main>
+
+
+        <footer class="site-footer">
+            <div class="footer-grid">
+
+                <!-- Brand / Description -->
+                <div class="footer-column">
+                    <h3 class="footer-logo">AI Text Humanizer</h3>
+                    <p class="footer-description">
+                        A free AI humanization tool designed to convert robotic AI-generated text into
+                        natural, authentic, human-like writing. No login. No limits. No cost.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="footer-column">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#input">AI Text Humanizer</a></li>
+                        <li><a href="#output">Paraphrasing Tool</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">AI Detection Bypass</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">SEO Writing Tips</a></li>
+                        <li><a href="#">Open Source</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter / Trust -->
+                <div class="footer-column footer-highlight">
+                    <h4>Trusted & Free</h4>
+                    <p>
+                        Used by students, writers, marketers, and developers worldwide.
+                        Built with transparency and accessibility in mind.
+                    </p>
+
+                    <div class="footer-badges">
+                        <span><i class="fas fa-lock"></i> No Login</span>
+                        <span><i class="fas fa-check"></i> 100% Free</span>
+                        <span><i class="fas fa-shield-alt"></i> Privacy First</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="current-year"></span> AI Text Humanizer.
+                    All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Text copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Login Modal -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-login">&times;</span>
+        <h2>Login Required</h2>
+        <p>You have reached the free usage limit. Please log in to continue humanizing text.</p>
+        <button id="google-login" class="btn btn-google">
+            <i class="fab fa-google"></i> Continue with Google
+        </button>
+    </div>
+</div>
+
+</body>
+
+</html>

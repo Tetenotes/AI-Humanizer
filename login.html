@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI Humanizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Login</h1>
+
+    <form id="login-form">
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <button id="google-login" class="btn btn-google">
+      <i class="fab fa-google"></i> Login with Google
+    </button>
+
+    <p>
+      Don't have an account? <a href="register.html">Register here</a>
+    </p>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("login-form");
+    const messageDiv = document.getElementById("message");
+    const googleBtn = document.getElementById("google-login");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      try {
+        const res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          localStorage.setItem("token", data.token);
+          window.location.href = "index.html";
+        } else {
+          showMessage(data.message, "error");
+        }
+      } catch (err) {
+        showMessage("Server error", "error");
+      }
+    });
+
+    googleBtn.addEventListener("click", () => {
+      window.location.href = "/api/auth/google";
+    });
+
+    function showMessage(msg, type) {
+      messageDiv.textContent = msg;
+      messageDiv.className = `message ${type}`;
+    }
+  </script>
+</body>
+</html>

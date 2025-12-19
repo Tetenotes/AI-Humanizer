@@ -1,0 +1,25 @@
+{
+  "name": "ai-text-humanizer",
+  "version": "1.0.0",
+  "description": "ZAYUVALYA - AI Humanizer is a free, open-source tool designed to help users rephrase and humanize text effortlessly. Built with simplicity and efficiency in mind, this tool ensures that your text is transformed into a more natural and human-like form while preserving its original meaning. ZAYUVALYA - AI Humanizer operates entirely in the browser, making it accessible, private, and 100% free to use without any login required.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

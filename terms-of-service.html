@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | AI Text Humanizer</title>
+    <style>
+        :root {
+            --bg1: #57d1ac;
+            --bg2: #0f172a;
+            --a1: #95c907;
+            --a2: #360bb6;
+            --t1: #e5e7eb;
+            --t2: #94a3b8;
+            --g: rgba(255, 255, 255, .08);
+            --b: rgba(255, 255, 255, .15)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--t1);
+            background: radial-gradient(1200px 600px at 10% -10%, #1e293b 0%, transparent 60%), radial-gradient(800px 500px at 90% 10%, #312e81 0%, transparent 55%), linear-gradient(180deg, var(--bg2), var(--bg1));
+            padding: 0 16px;
+            line-height: 1.7;
+            overflow-x: hidden
+        }
+
+        header {
+            text-align: center;
+            padding: 64px 0 48px;
+            position: relative
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--a1), transparent);
+            opacity: .4
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            margin: 0;
+            background: linear-gradient(90deg, var(--a1), var(--a2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -.02em
+        }
+
+        header p {
+            margin-top: 8px;
+            color: var(--t2);
+            font-size: .95rem;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        main {
+            max-width: 880px;
+            margin: 0 auto 64px;
+            padding: 32px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+            backdrop-filter: blur(14px);
+            border-radius: 20px;
+            border: 1px solid var(--b);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .08)
+        }
+
+        section {
+            margin-bottom: 36px;
+            position: relative;
+            padding-left: 24px;
+            animation: fade .6s ease both
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            bottom: 6px;
+            width: 3px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--a1), var(--a2));
+            opacity: .7
+        }
+
+        section:nth-child(1) {
+            animation-delay: .05s
+        }
+
+        section:nth-child(2) {
+            animation-delay: .1s
+        }
+
+        section:nth-child(3) {
+            animation-delay: .15s
+        }
+
+        section:nth-child(4) {
+            animation-delay: .2s
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            letter-spacing: .01em
+        }
+
+        p,
+        li {
+            color: var(--t2)
+        }
+
+        ul {
+            padding-left: 20px
+        }
+
+        li {
+            margin-bottom: 8px
+        }
+
+        li::marker {
+            color: var(--a1)
+        }
+
+        a {
+            color: var(--a1);
+            text-decoration: none;
+            position: relative
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width .25s ease
+        }
+
+        a:hover::after {
+            width: 100%
+        }
+
+
+        .site-footer {
+            background: linear-gradient(180deg, #020617, #020617);
+            color: #e5e7eb;
+            padding: 64px 32px 24px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #cbd5f5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .footer-socials a {
+            color: #cbd5f5;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .footer-socials a:hover {
+            transform: translateY(-3px);
+            color: #3b82f6;
+        }
+
+        /* Trust Section */
+        .footer-highlight p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .footer-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .footer-badges span {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Bottom Bar */
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .site-footer {
+                padding: 48px 20px 20px;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(12px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @media(max-width:640px) {
+            main {
+                padding: 24px
+            }
+
+            section {
+                padding-left: 18px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AI Text Humanizer: Terms of Service</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Acceptance of Terms</h2>
+            <p>By using our tool, you agree to comply with these terms and conditions.</p>
+        </section>
+        <section>
+            <h2>Use of Service</h2>
+            <p>You may use AI Text Humanizer for personal, educational, or professional purposes. Do not misuse the
+                service.</p>
+        </section>
+        <section>
+            <h2>Prohibited Actions</h2>
+            <ul>
+                <li>Reverse engineering or copying the software</li>
+                <li>Using the tool for unlawful purposes</li>
+                <li>Distributing harmful content</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Limitation of Liability</h2>
+            <p>We provide this tool “as-is” without warranties. We are not liable for damages resulting from use.</p>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <!-- Brand / Description -->
+            <div class="footer-column">
+                <h3 class="footer-logo">AI Text Humanizer</h3>
+                <p class="footer-description">
+                    A free AI humanization tool designed to convert robotic AI-generated text into
+                    natural, authentic, human-like writing. No login. No limits. No cost.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="footer-column">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="#input">AI Text Humanizer</a></li>
+                    <li><a href="#output">Paraphrasing Tool</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#">AI Detection Bypass</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">SEO Writing Tips</a></li>
+                    <li><a href="#">Open Source</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter / Trust -->
+            <div class="footer-column footer-highlight">
+                <h4>Trusted & Free</h4>
+                <p>
+                    Used by students, writers, marketers, and developers worldwide.
+                    Built with transparency and accessibility in mind.
+                </p>
+
+                <div class="footer-badges">
+                    <span><i class="fas fa-lock"></i> No Login</span>
+                    <span><i class="fas fa-check"></i> 100% Free</span>
+                    <span><i class="fas fa-shield-alt"></i> Privacy First</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span> AI Text Humanizer.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear()
+    </script>
+</body>
+
+</html>
