@@ -80,47 +80,10 @@
     </aside>
 
     <div class="container">
-        <header class="site-header">
-            <div class="header-container">
-
-                <!-- Logo + Tagline -->
-                <div class="header-brand">
-                    <h1 class="logo">AI Text Humanizer</h1>
-                    <p class="tagline">Transform AI-generated content into natural, human-like writing</p>
-                </div>
-
-                <!-- Navigation Links (Desktop) -->
-                <nav class="header-nav">
-                    <a href="#input" class="nav-link">Input Text</a>
-                    <a href="#output" class="nav-link">Humanized Output</a>
-                    <a href="#how-it-works" class="nav-link">How It Works</a>
-                    <a href="#about" class="nav-link">About</a>
-                </nav>
-
-                <!-- Call-to-Action -->
-                <div class="header-cta">
-                    <a href="#humanize-btn" class="btn btn-primary">
-                        <i class="fas fa-magic"></i> Humanize Now
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Dropdown Menu -->
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="#input" class="mobile-link">Input Text</a>
-                <a href="#output" class="mobile-link">Humanized Output</a>
-                <a href="#how-it-works" class="mobile-link">How It Works</a>
-                <a href="#about" class="mobile-link">About</a>
-                <a href="#humanize-btn" class="mobile-link btn btn-primary">Humanize Now</a>
-            </div>
+        <header>
+            <h1 class="logo">AI Text Humanizer</h1>
+            <p class="tagline">Transform AI-generated content into natural, human-like writing</p>
         </header>
-
-
         <main>
             <div class="card" id="input">
 
@@ -285,16 +248,16 @@
 
     <script src="script.js"></script>
     <!-- Login Modal -->
-<div id="login-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" id="close-login">&times;</span>
-        <h2>Login Required</h2>
-        <p>You have reached the free usage limit. Please log in to continue humanizing text.</p>
-        <button id="google-login" class="btn btn-google">
-            <i class="fab fa-google"></i> Continue with Google
-        </button>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login">&times;</span>
+            <h2>Login Required</h2>
+            <p>You have reached the free usage limit. Please log in to continue humanizing text.</p>
+            <button id="google-login" class="btn btn-google">
+                <i class="fab fa-google"></i> Continue with Google
+            </button>
+        </div>
     </div>
-</div>
 
 </body>
 
