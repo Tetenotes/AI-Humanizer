@@ -7,9 +7,9 @@ const charCount = document.getElementById('char-count');
 
 inputText.addEventListener('input', () => {
     const count = inputText.value.length;
-    charCount.textContent = `${count}/750 characters`;
+    charCount.textContent = `${count}/5000 characters`;
 
-    if (count > 750) {
+    if (count > 5000) {
         charCount.classList.add('error');
     } else {
         charCount.classList.remove('error');
@@ -31,8 +31,8 @@ humanizeBtn.addEventListener('click', async () => {
         return;
     }
 
-    if (text.length > 750) {
-        showNotification('Text exceeds 750 character limit', 'error');
+    if (text.length > 5000) {
+        showNotification('Text exceeds 5000 character limit', 'error');
         return;
     }
 
@@ -131,7 +131,7 @@ const clearBtn = document.getElementById('clear-input');
 clearBtn.addEventListener('click', () => {
     inputText.value = '';
     outputText.value = '';
-    charCount.textContent = '0/750 characters';
+    charCount.textContent = '0/5000 characters';
     charCount.classList.remove('error');
     inputText.focus();
 });
@@ -171,3 +171,46 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+// --- Existing script above remains unchanged ---
+
+// Attempt to disable developer tools
+document.addEventListener('keydown', (e) => {
+    // F12
+    if (e.key === 'F12') e.preventDefault();
+
+    // Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey) {
+        if (['I', 'C', 'J'].includes(e.key.toUpperCase())) {
+            e.preventDefault();
+        }
+    }
+
+    // Ctrl+U (view source)
+    if (e.ctrlKey && e.key.toUpperCase() === 'U') {
+        e.preventDefault();
+    }
+});
+
+// Disable right-click context menu
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+// Optional: Detect DevTools opening via window size (works in some browsers)
+let devtoolsOpen = false;
+setInterval(() => {
+    const threshold = 160;
+    if (
+        window.outerWidth - window.innerWidth > threshold ||
+        window.outerHeight - window.innerHeight > threshold
+    ) {
+        if (!devtoolsOpen) {
+            devtoolsOpen = true;
+            alert('Developer tools detected. Access is disabled.');
+        }
+    } else {
+        devtoolsOpen = false;
+    }
+}, 1000);
+
+// --- Existing script continues below ---
